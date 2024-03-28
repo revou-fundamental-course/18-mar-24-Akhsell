@@ -1,12 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Slicing Assignment RevoU</title>
+    <title>Manatee's Apartment</title>
 </head>
-<body>
-    <h1>Hello World</h1>
+
+<!-- NAVBAR -->
+<body
+    style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+    <header style="border-bottom: 1px solid black">
+        <nav class="container">
+            <div class="navbar">
+                <img class="logo" src="">
+                <div class="menu">
+                    <a class="menu-item" href="#home">Home</a>
+                    <a class="menu-item" href="#our-places">Our Locations</a>
+                    <a class="menu-item" href="#contact-us">Contact Us</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+<!-- END OF NAVBAR -->
+
+<!-- HOME -->
+    <main class="main-content">
+        <section id="home">
+            <div class="container">
+                <div class="home-title">
+                    <h1>Manatee Apartment</h1>
+                    <h6>Elevating Everyday Living to Unparalleled Heights</h6>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-contact">
+            <div class="container">
+                <div class="about-contact">
+                    <div class="about">
+                        <img class="about-img" src="asset/apartemen1.jpg">
+                        <img class="about-img" src="asset/apartment2.jpg">
+                        <img class="about-img" src="asset/apartment3.jpg">
+                        <img class="about-img" src="asset/apartment4.jpg">
+                        <img class="about-img" src="asset/apartment5.jpg">
+                        <img class="about-img" src="asset/apartment6.jpg">
+
+                        <script>
+                            var slideIndex = 1;
+                            showDivs(slideIndex);
+
+                            function plusDivs(n) {
+                                showDivs((slideIndex += n));
+                            }
+
+                            function showDivs(n) {
+                                var n;
+                                var imgList = document.getElementsByClassName("about-img");
+                                if (n > imgList.length) slideIndex = 1;
+                                else if (n < 1) slideIndex = imgList.length;
+
+                                for (i = 0; i < imgList.length; i++) {
+                                    imgList[i].style.display = "none";
+                                }
+
+                                imgList[slideIndex - 1].style.display = 'block';
+                            }
+
+                            setInterval(() => {
+                                plusDivs(1);
+                            }, 5000)
+                        </script>
+
+                        <div class="about-content">
+                            <div class="content-caption">
+                                <p>"Where Comfort Meets Community, Your Perfect Home Awaits."</p>
+                            </div>
+                            <div class="content-person">
+                                <img src="">
+                                <div class="person-info">
+                                    <h6>Muhammad Akhsel Dwinanda</h6>
+                                    <p>Beginner Programmer Student.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="about-information">
+                            <h6 class="information-title">Why should you choose Manatee Apartment?</h6>
+                            <ul class="information-list">
+                                <li>
+                                    <div class="list-number">1</div>
+                                    <p class="list-paragraph">
+                                        Luxurious Amenities, Our luxury apartments offer an unparalleled array of
+                                        amenities to elevate your lifestyle.
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="list-number">2</div>
+                                    <p class="list-paragraph">
+                                        Stunning Design, Step into a world of elegance and sophistication with our
+                                        impeccably designed luxury apartments.
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="list-number">3</div>
+                                    <p class="list-paragraph">
+                                        Prime Locations, Nestled in the heart of vibrant neighborhoods, our luxury
+                                        apartments offer more than just a place to call home, they provide access to the
+                                        best of urban living.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="contact">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Contact Us</h4>
+                                <p>We're committed to swift responses. Expect to hear from us promptly once your data is
+                                    received.</p>
+                            </div>
+
+                            <form id="contactUs" name="contactUs" onsubmit="return validateForm();">
+                                <div class="input">
+                                    <label for="name">Your Name:</label>
+                                    <input id="name" name="name" type="text" placeholder="First and last name" />
+                                </div>
+                                <div class="input">
+                                    <label for="email">Email Address:</label>
+                                    <input id="email" name="email" type="email" placeholder="example@gmail.com" />
+                                </div>
+                                <div class="input">
+                                    <label for="location">Choose your Location</label>
+                                    <select id="location" name="location">
+                                        <option value="" disabled selected hidden>Select your option</option>
+                                        <optgroup label="Jakarta">
+                                            <option>Ascott Jakarta</option>
+                                            <option>Fraser Residence Sudirman Jakarta</option>
+                                            <option>Oakwood Premier Cozmo Jakarta</option>
+                                        </optgroup>
+                                        <optgroup label="Bali">
+                                            <option>Neano Escape</option>
+                                            <option>The Royal Purnama</option>
+                                            <option>Harsono Boutique Resort Bali</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <input class="button" onclick="validateForm()" type="submit" value="SEND">
+                            </form>
+
+                            <script>
+                                function validateForm(contactUs) {
+                                    var name = document.forms["contactUs"]["name"].value;
+                                    var email = document.forms["contactUs"]["email"].value;
+                                    var interest = document.forms["contactUs"]["location"].value;
+
+                                    if (name == "" || email == "" || location == "") {
+                                        alert("Input required!");
+                                        return false;
+                                    }
+                                }
+                            </script>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- END OF HOME -->
+
+<!-- OUR LOCATIONS -->
+        <section id="our-places" style="border-bottom: 1px solid black;">
+            <div class="container">
+                <div class="location-judul">
+                    <h2>Our Locations</h2>
+                </div>
+                <div class="destination">
+                    <img src="asset/building-solid.svg">
+                    <div class="city">
+                        <h4>Jakarta</h4>
+                        <p>Vibrant Capital, Infinite Possibilities.</p>
+                    </div>
+                    <img src="asset/building-solid.svg">
+                    <div class="city">
+                        <h4>Bali</h4>
+                        <p>Island of Bliss, Discover paradise on earth where beauty, culture, and spirituality intertwine.</p>
+                    </div>
+                    <img src="asset/building-solid.svg">
+                    <div class="city">
+                        <h4>Bandung</h4>
+                        <p>Creative Hub, Culinary Haven, Immerse yourself in the vibrant energy of Bandung.</p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="destination">
+                    <img src="asset/building-solid.svg">
+                    <div class="city">
+                        <h4>Bogor</h4>
+                        <p>City of Rain and Heritage, Discover the charm of Bogor.</p>
+                    </div>
+                    <img src="asset/building-solid.svg">
+                    <div class="city">
+                        <h4>Sentul</h4>
+                        <p>Nature's Playground, Urban Comfort.</p>
+                    </div>
+                    <img src="asset/building-solid.svg">
+                    <div class="city">
+                        <h4>Ubud</h4>
+                        <p>Where Culture Meets Tranquility. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- END OF OUR LOCATIONS -->
+
+<!-- CONTACT US -->
+        <section id="contact-us" style="border-bottom: 1px solid black;">
+            <div class="container">
+                <div class="call-us-title">
+                    <h2>So, what are you waiting for?</h2>
+                    <p>Call us now and you will get the experience you've never had.</p>
+                </div>
+                <div class="book-now">
+                    <input class="button" type="submit" value="CALL US">
+                </div>
+            </div>
+        </section>
+<!-- END OF CONTACT US -->
+
+    </main>
+
+<!-- FOOTER -->
+    <footer class="footer-container">
+        <img class="logo" src="">
+        <div class="web-info">
+            <p>Terms of Service</p>
+            <p>Privacy and Policy</p>
+        </div>
+        <div class="web-info">
+            <p>©2024</p>
+            <p>Manatee Apartment</p>
+        </div>
+    </footer>
+<!-- END OF FOOTER -->
+
 </body>
+
 </html>
