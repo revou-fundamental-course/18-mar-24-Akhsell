@@ -145,8 +145,8 @@ html {
   flex: 1 0 auto;
 }
 .logo {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   align-items: center;
 }
 .menu-item {
@@ -217,9 +217,9 @@ html {
   align-items: center;
 }
 .content-person > img {
-  border-radius: 50%;
-  width: 75px;
-  height: 75px;
+  border-radius: 60%;
+  width: 55px;
+  height: 55px;
 }
 .person-info {
   display: flex;
@@ -363,7 +363,7 @@ option {
 .destination > img {
   background-color: gainsboro;
   border-radius: 20%;
-  padding: 7px;
+  padding: px;
   width: 25px;
   height: 25px;
   align-self: flex-start;
